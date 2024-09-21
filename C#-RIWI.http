@@ -1,0 +1,6 @@
+@C__RIWI_HostAddress = http://localhost:5274
+
+GET {{C__RIWI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
