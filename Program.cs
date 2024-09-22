@@ -1,6 +1,9 @@
+using C__RIWI.src.Api.Dtos.Request;
+using C__RIWI.src.Api.Validators;
 using C__RIWI.src.Domain;
 using C__RIWI.src.Domain.Entities;
 using C__RIWI.src.Domain.Repositories;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +25,11 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<IRepository<Product>, ProductRepository>();
 builder.Services.AddScoped<IRepository<User>, UserRepository>();
 builder.Services.AddScoped<IRepository<Order>, OrderRepository>();
+
+//VALIDADORES
+builder.Services.AddScoped<IValidator<UserRequest>, UserValidatorRequest>();
+builder.Services.AddScoped<IValidator<ProductRequest>, ProductValidatorRequest>();
+builder.Services.AddScoped<IValidator<OrderRequest>, OrderValidatorRequest>();
 
 var app = builder.Build();
 
