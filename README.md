@@ -1,40 +1,37 @@
-# Repositorio de Actividades de C# 
+# Actividad 02 API RESTful Para el manejo de ordenes usuarios y productos con ASP.NET Core 8, MySQL y Docker
 
-Este repositorio contiene las actividades correspondientes al aprendizaje de **C#**. Cada actividad está organizada en una rama separada para facilitar la revisión y entrega.
+Este proyecto es una API RESTful construida con **ASP.NET Core 8** y **MySQL** como base de datos, empaquetado con **Docker** para facilitar la configuración y el uso de mysql en entornos de desarrollo y producción. Implementa una **Arquitectura Hexagonal** enfocada en la separación de responsabilidades y la escalabilidad, aplicando los principios de **SOLID** y buenas prácticas de desarrollo para garantizar un código limpio y mantenible.
 
-## Estructura del Repositorio
+## Requisitos previos
 
-Cada actividad se entrega en su propia rama, con un formato estándar para facilitar la navegación y comprensión. A continuación, se detalla cómo está organizado el repositorio:
+Antes de clonar y ejecutar este proyecto, asegúrate de tener instalados los siguientes requisitos:
 
-- **Rama `actividad-01`**: Descripción y código relacionado con la primera actividad.
-- **Rama `actividad-02`**: Descripción y código relacionado con la segunda actividad.
-- Y así sucesivamente...
+- **.NET 8 SDK**: [Descargar e instalar .NET 8 SDK](https://dotnet.microsoft.com/download)
+- **Docker**: [Descargar e instalar Docker](https://www.docker.com/get-started)
+- **Git**: [Descargar e instalar Git](https://git-scm.com/)
 
-## Instrucciones para Clonar el Repositorio
+## Clonar el proyecto
 
-Puedes clonar este repositorio utilizando el siguiente comando:
+Primero, clona este repositorio en tu máquina local y accede a la rama `actividad-01`:
 
 ```bash
 git clone https://github.com/juanregino/C-SHARP-RIWI.git
+git checkout actividad-02
 ```
-## Cómo Listar las Ramas del Repositorio
-
-### Listar las Ramas Locales
-
-Para ver todas las ramas que tienes disponibles localmente en tu repositorio clonado, utiliza el siguiente comando:
+## Ejecutar el proyecto
+Primero debes correr el servicio de base de datos MySQL en tu máquina local, ejecutando el siguiente comando en la terminal:
 
 ```bash
-git branch
+docker-compose up -d
 ```
-### Listar las Ramas Remotas
+
+Una vez que se haya ejecutado el servicio de base de datos, puedes correr el proyecto de la actividad en la terminal:
+
 ```bash
-git branch -r
+dotnet run
 ```
-### Listar todas las Ramas (Locales y Remotas)
-```bash
-git branch a
-```
-### Puedes cambiar de Rama con el siguiente comando 
-```bash
-git checkout <nombre-de-la-rama>
+
+
+## Administrar tareas 
+- ** Swagger **: [acceder a la documentacion de la API RESTful](http://localhost:5097/swagger/index.html)
 
