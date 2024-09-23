@@ -3,6 +3,7 @@ using C__RIWI.src.Api.Validators;
 using C__RIWI.src.Domain;
 using C__RIWI.src.Domain.Entities;
 using C__RIWI.src.Domain.Repositories;
+using C__RIWI.src.Infraestructure.Mappers;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,6 +31,15 @@ builder.Services.AddScoped<IRepository<Order>, OrderRepository>();
 builder.Services.AddScoped<IValidator<UserRequest>, UserValidatorRequest>();
 builder.Services.AddScoped<IValidator<ProductRequest>, ProductValidatorRequest>();
 builder.Services.AddScoped<IValidator<OrderRequest>, OrderValidatorRequest>();
+
+// Configura AutoMapper con perfiles
+builder.Services.AddAutoMapper(cfg =>
+{
+    cfg.AddProfile<UserMapper>();
+    cfg.AddProfile<OrderMapper>();
+    cfg.AddProfile<ProductMapper>();
+});
+
 
 var app = builder.Build();
 
